@@ -3,5 +3,5 @@ const sum = (a,b)=>{
 }
 
 it("should add correctly",()=>{
-	expect(sum(10,10)).toBe(10);
+	expect(sum(10,10)).toBe(20);
 })
