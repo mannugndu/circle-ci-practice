@@ -1,4 +1,8 @@
 {
+  "projectId": "sn8mfk",
+  "env": {
+    "CYPRESS_RECORD_KEY": "92982ee7-2f99-4866-93af-f6e67ab8d423"
+  },
   "testFiles": "examples/actions.spec.js",
   "video": false
 }
