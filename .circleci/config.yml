@@ -110,5 +110,5 @@ workflows:
           executor: cypress/browsers-chrome78-ff70
           browser: firefox
           spec: 'cypress/integration/examples/actions.spec.js'
-          no-workspace: true # since we don't need the workspace after this job
+          no-workspace: true
 
