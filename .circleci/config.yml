@@ -104,6 +104,7 @@ workflows:
 
       # run tests on Firefox browser
       - cypress/run:
+          context: cypress_keys 
           record: true              
           store_artifacts: true
           name: using Firefox          
