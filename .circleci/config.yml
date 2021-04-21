@@ -107,6 +107,7 @@ workflows:
           store_artifacts: true
           record: true
           name: using Firefox
+          key: 92982ee7-2f99-4866-93af-f6e67ab8d423
           executor: cypress/browsers-chrome78-ff70
           browser: firefox
           spec: 'cypress/integration/examples/actions.spec.js'
