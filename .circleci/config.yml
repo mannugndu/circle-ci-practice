@@ -70,7 +70,7 @@ jobs:
   # example test job with 2 commands
   # 1. starts the app in the background
   # 2. runs the tests in a separate command
-  two-commands:
+  run-on-electron:
     docker:
       # find Docker image at https://github.com/cypress-io/cypress-docker-images
       - image: cypress/base:12.14.0
@@ -93,7 +93,7 @@ workflows:
   version: 2
   tests:
     jobs:
-      - two-commands
+      - run-on-electron
 
       # example jobs that use Cypress CircleCI Orb
       # see https://github.com/cypress-io/circleci-orb
