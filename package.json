@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "cypress run --record --key 92982ee7-2f99-4866-93af-f6e67ab8d423"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,8 @@
   "homepage": "https://github.com/mannugndu/circle-ci-practice#readme",
   "dependencies": {
     "jest": "^26.6.3"
+  },
+  "devDependencies": {
+    "cypress": "^7.1.0"
   }
 }
