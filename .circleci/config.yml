@@ -104,6 +104,8 @@ workflows:
 
       # run tests on Firefox browser
       - cypress/run:
+          store_artifacts: true
+          record: true
           name: using Firefox
           executor: cypress/browsers-chrome78-ff70
           browser: firefox
