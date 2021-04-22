@@ -95,7 +95,8 @@ workflows:
       - run-on-electron
 
       - finish_job:
-          requires: run-on-electron
+          requires:
+            - run-on-electron
 
       # example jobs that use Cypress CircleCI Orb
       # see https://github.com/cypress-io/circleci-orb
