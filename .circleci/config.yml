@@ -107,5 +107,5 @@ workflows:
           no-workspace: true
 
       - run-on-electron:
-        requires:
-          - using Firefox
+          requires:
+            - using Firefox
