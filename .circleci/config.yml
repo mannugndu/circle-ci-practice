@@ -98,7 +98,7 @@ workflows:
       # run tests on Firefox browser
       - cypress/run:
           requires:
-            - cypress/install
+            - install using orb
           record: true
           store_artifacts: true
           name: using Firefox
