@@ -88,19 +88,21 @@ workflows:
     jobs:
       - run-on-electron
 
-      # # example jobs that use Cypress CircleCI Orb
-      # # see https://github.com/cypress-io/circleci-orb
-      #
-      # - cypress/install:
-      #     name: install using orb
-      #     executor: cypress/base-12-14-0
-      #
-      # # run tests on Firefox browser
-      # - cypress/run:
-      #     record: true
-      #     store_artifacts: true
-      #     name: using Firefox
-      #     executor: cypress/browsers-chrome78-ff70
-      #     browser: firefox
-      #     spec: 'cypress/integration/examples/actions.spec.js'
-      #     no-workspace: true
+      # example jobs that use Cypress CircleCI Orb
+      # see https://github.com/cypress-io/circleci-orb
+
+      - cypress/install:
+          name: install using orb
+          executor: cypress/base-12-14-0
+
+      # run tests on Firefox browser
+      - cypress/run:
+          requires:
+            - cypress/install
+          record: true
+          store_artifacts: true
+          name: using Firefox
+          executor: cypress/browsers-chrome78-ff70
+          browser: firefox
+          spec: 'cypress/integration/examples/actions.spec.js'
+          no-workspace: true
