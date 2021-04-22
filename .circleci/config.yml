@@ -79,10 +79,7 @@ jobs:
 
     steps:
       - checkout
-      - restore-cached-dependencies
-      - install-dependencies
-      - cache-dependencies
-
+      
       - run:
           name: Run Cypress tests
           command: npm test
@@ -104,12 +101,11 @@ workflows:
 
       # run tests on Firefox browser
       - cypress/run:
-          context: cypress_keys 
-          record: true              
+          context: cypress_keys
+          record: true
           store_artifacts: true
-          name: using Firefox          
+          name: using Firefox
           executor: cypress/browsers-chrome78-ff70
           browser: firefox
           spec: 'cypress/integration/examples/actions.spec.js'
           no-workspace: true
-
