@@ -83,6 +83,10 @@ jobs:
       - store-test-artifacts
 
   finish_job:
+    docker:
+      # find Docker image at https://github.com/cypress-io/cypress-docker-images
+      - image: cypress/base:12.14.0
+      
     steps:
       - run:
           name: print msg
