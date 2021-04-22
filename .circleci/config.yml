@@ -32,14 +32,7 @@ commands:
       - run:
           name: Install dependencies
           command: npm ci
-      - run:
-          name: Install TodoMVC dependencies
-          command: npm ci
-          working_directory: todomvc
-      - run:
-          name: Install TodoMVC Redux dependencies
-          command: npm ci
-          working_directory: todomvc-redux
+
       # show all installed Cypress versions
       - run: DEBUG=cypress:cli npx cypress cache path
       - run: DEBUG=cypress:cli npx cypress cache list
@@ -93,23 +86,24 @@ workflows:
   version: 2
   tests:
     jobs:
+
       - run-on-electron
 
       # example jobs that use Cypress CircleCI Orb
       # see https://github.com/cypress-io/circleci-orb
-
       - cypress/install:
-          name: install using orb
+          name: install dependencies using orb
           executor: cypress/base-12-14-0
 
       # run tests on Firefox browser
       - cypress/run:
-          context: cypress_keys 
-          record: true              
+          context: cypress_keys
+          requires:
+            - install dependencies using orb
+          record: true
           store_artifacts: true
-          name: using Firefox          
+          name: using Firefox
           executor: cypress/browsers-chrome78-ff70
           browser: firefox
           spec: 'cypress/integration/examples/actions.spec.js'
           no-workspace: true
-

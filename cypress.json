@@ -1,7 +1,6 @@
 {
   "projectId": "sn8mfk",
   "env": {   
-  "CYPRESS_RECORD_KEY":"CYPRESS_RECORD_KEY"
   },
   "testFiles": "examples/actions.spec.js"
 }
