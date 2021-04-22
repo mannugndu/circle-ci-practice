@@ -97,7 +97,7 @@ workflows:
       - cypress/run:
           context: cypress_keys
           requires:
-            - install using orb
+            - install dependencies using orb
           record: true
           store_artifacts: true
           name: using Firefox
