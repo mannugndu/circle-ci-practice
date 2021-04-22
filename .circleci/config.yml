@@ -87,6 +87,8 @@ workflows:
   tests:
     jobs:
 
+      - run-on-electron
+
       # example jobs that use Cypress CircleCI Orb
       # see https://github.com/cypress-io/circleci-orb
       - cypress/install:
@@ -105,7 +107,3 @@ workflows:
           browser: firefox
           spec: 'cypress/integration/examples/actions.spec.js'
           no-workspace: true
-
-      - run-on-electron:
-          requires:
-            - using Firefox
