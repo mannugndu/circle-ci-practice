@@ -112,4 +112,6 @@ workflows:
           browser: firefox
           spec: 'cypress/integration/examples/actions.spec.js'
           no-workspace: true
+          parallel: true # split all specs across machines
+          parallelism: 4
 
